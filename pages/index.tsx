@@ -1,17 +1,16 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Head>
-        <title></title>
+        <title>Sagi Mines</title>
       </Head>
-
-      {/* Header */}
-
+      <Header />
       {/* Hero */}
 
       {/* About */}
@@ -21,6 +20,6 @@ export default function Home() {
       {/* Projects */}
 
       {/* Contact Me */}
-    </>
+    </div>
   );
 }
