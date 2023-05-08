@@ -1,11 +1,10 @@
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
-import myPhoto from '@/assets/my-icon.png';
+import myIcon from '@/assets/my-icon.png';
 import Link from 'next/link';
-type Props = {};
 
-const Hero = (props: Props) => {
+const Hero = () => {
   const [text, count] = useTypewriter({
     words: ['Full Stack Developer', 'Frontend Developer'],
     loop: true,
@@ -16,10 +15,10 @@ const Hero = (props: Props) => {
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src={myPhoto}
+        src={myIcon}
         height="128"
         quality="100"
-        alt="My photo"
+        alt="My logo icon"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px]">
