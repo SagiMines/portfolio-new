@@ -1,7 +1,14 @@
+import { urlFor } from '@/sanity';
+import { Project } from '@/typings';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
-const Projects = () => {
-  const projects = [1, 2, 3, 4, 5];
+type Props = {
+  projects: Project[];
+};
+
+const Projects = ({ projects }: Props) => {
+  // const projects = [1, 2, 3, 4, 5];
   return (
     <motion.div
       initial={{
@@ -19,7 +26,7 @@ const Projects = () => {
         Projects
       </h3>
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80 scrollbar-thin">
-        {projects.map((project, index) => (
+        {projects?.map((project, index) => (
           <div
             key={index}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
@@ -39,8 +46,9 @@ const Projects = () => {
               viewport={{
                 once: true,
               }}
-              src="https://download.logo.wine/logo/WeWork/WeWork-Logo.wine.png"
-              alt=""
+              src={urlFor(project?.image).url()}
+              alt="Project image"
+              className="w-[25rem] h-auto"
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
@@ -48,21 +56,48 @@ const Projects = () => {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case Study {index + 1} of {projects.length}:
                 </span>{' '}
-                UPS clone
+                {project?.title}
               </h4>
+
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map(technology => (
+                  <img
+                    className="h-10 w-10"
+                    key={technology?._id}
+                    src={urlFor(technology?.image).url()}
+                    alt="Technology image"
+                    title={technology?.title}
+                  />
+                ))}
+              </div>
+
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                id ex eget augue ultrices accumsan. Nam fringilla nec libero in
-                venenatis. Morbi eu tincidunt mauris. Sed nec condimentum erat.
-                Mauris pretium scelerisque mauris sed imperdiet. Morbi at sem
-                cursus, mollis diam eget, viverra leo. Fusce euismod leo tortor,
-                accumsan vehicula orci dapibus eget. Donec eget tincidunt felis.
-                Nam gravida lorem et arcu porttitor vestibulum. Duis
-                sollicitudin ante non nibh malesuada euismod. Morbi molestie
-                feugiat volutpat. Pellentesque habitant morbi tristique senectus
-                et netus et malesuada fames ac turpis egestas. Vivamus non
-                mollis purus, vitae pellentesque orci.
+                {project?.summary}
               </p>
+
+              <div className="flex justify-evenly flex-row gap-8">
+                {project && project.linkToServer && (
+                  <Link href={project?.linkToServer}>
+                    <button type="submit" className="projectButtons">
+                      Server GitHub
+                    </button>
+                  </Link>
+                )}
+                {project && project.linkToClient && (
+                  <Link href={project?.linkToClient}>
+                    <button type="submit" className="projectButtons">
+                      {project.linkToServer ? 'Client' : 'App'} GitHub
+                    </button>
+                  </Link>
+                )}
+                {project && project.linkToDemo && (
+                  <Link href={project?.linkToDemo}>
+                    <button type="submit" className="projectButtons">
+                      Live Demo
+                    </button>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         ))}

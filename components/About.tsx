@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion';
 import myPhoto from '@/assets/my-photo.jpeg';
 import Image from 'next/image';
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
-const About = () => {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+const About = ({ pageInfo }: Props) => {
   const MotionImage = motion(Image);
   return (
     <motion.div
@@ -35,10 +41,12 @@ const About = () => {
         viewport={{
           once: true,
         }}
-        src={myPhoto}
-        width="700"
+        src={urlFor(pageInfo?.profilePic).url()}
+        width={0}
+        height={0}
+        sizes="100vw"
         alt="My photo"
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-[500px] xl:h-[600px]"
+        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-auto rounded-full object-cover md:rounded-lg md:w-64 xl:w-[500px]"
       />
       <div className="space-y-10 px-0 md:px-10">
         <h4 className="text-4xl font-semibold">
@@ -46,22 +54,7 @@ const About = () => {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{' '}
           background
         </h4>
-        <p className="text-base">
-          Orci varius natoque penatibus et magnis dis parturient montes,
-          nascetur ridiculus mus. Praesent facilisis mi felis, laoreet
-          ullamcorper mauris fringilla sed. Suspendisse erat nulla, placerat non
-          nisi vitae, tincidunt varius felis. Maecenas et volutpat nisi. Donec
-          porttitor purus fermentum sapien rutrum maximus. Donec eleifend
-          dignissim risus ac ultricies. In finibus mollis magna. Proin volutpat
-          gravida urna, ac scelerisque libero accumsan eu. Morbi faucibus,
-          tortor eu pharetra fringilla, tortor ante rutrum orci, in iaculis leo
-          erat sed ligula. Nunc efficitur sapien leo, sed eleifend est egestas
-          sit amet. Praesent fringilla venenatis odio at semper. Vestibulum vel
-          tellus mattis, viverra dui ac, maximus velit. Sed aliquet, justo sit
-          amet lobortis laoreet, libero velit dapibus ante, suscipit ultrices
-          nulla odio a libero. Aenean suscipit nunc velit, vel tincidunt ipsum
-          cursus at. Quisque ultricies urna odio, a porttitor felis aliquam sed.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
