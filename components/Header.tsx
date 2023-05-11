@@ -1,8 +1,13 @@
 import { SocialIcon } from 'react-social-icons';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Social } from '@/typings';
 
-function Header() {
+type Props = {
+  socials: Social[];
+};
+
+function Header({ socials }: Props) {
   return (
     <header className="sticky top-0 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center p-5">
       <motion.div
@@ -21,7 +26,15 @@ function Header() {
         }}
         className="flex flex-row items-center"
       >
-        <SocialIcon
+        {socials.map(social => (
+          <SocialIcon
+            key={social._id}
+            url={social.url}
+            fgColor="gray"
+            bgColor="transparent"
+          />
+        ))}
+        {/* <SocialIcon
           url="https://www.linkedin.com/in/sagimines/"
           fgColor="gray"
           bgColor="transparent"
@@ -35,7 +48,7 @@ function Header() {
           url="https://www.facebook.com/SagiMines"
           fgColor="gray"
           bgColor="transparent"
-        />
+        /> */}
       </motion.div>
       <Link href="#contact" passHref legacyBehavior>
         <motion.div
