@@ -7,13 +7,13 @@ import Projects from '@/components/Projects';
 import ContactMe from '@/components/ContactMe';
 import Link from 'next/link';
 import Image from 'next/image';
-import myIcon from '@/assets/my-icon.png';
 import { PageInfo, Project, Skill, Social } from '@/typings';
-import { GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { fetchPageInfo } from '@/utils/fetchPageInfo';
 import { fetchSkills } from '@/utils/fetchSkills';
 import { fetchProjects } from '@/utils/fetchProjects';
 import { fetchSocials } from '@/utils/fetchSocials';
+import { urlFor } from '@/sanity';
 
 type Props = {
   pageInfo: PageInfo;
@@ -59,7 +59,10 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
           <div className="flex items-center justify-center">
             <Image
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src={myIcon}
+              src={urlFor(pageInfo.heroImage).url()}
+              width={0}
+              height={0}
+              sizes="100vw"
               alt="My icon"
             />
           </div>
@@ -69,7 +72,7 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
@@ -82,6 +85,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 10,
   };
 };
