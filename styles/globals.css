@@ -8,10 +8,22 @@
   }
 
   .contactInput {
-    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40;
+    @apply outline-none bg-slate-400/10 rounded-sm border-b sm:px-6 sm:py-4 px-4 py-2 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40;
   }
 
   .projectButtons {
     @apply bg-[#F7AB0A] py-2 px-8 rounded-md text-black font-bold text-lg;
+  }
+
+  .contactMeInfoContainer {
+    @apply flex items-center space-x-5 justify-center;
+  }
+
+  .contactMeInfoIcon {
+    @apply text-[#F7AB0A] h-7 w-7 animate-pulse;
+  }
+
+  .contactMeInfo {
+    @apply md:text-2xl text-xl;
   }
 }

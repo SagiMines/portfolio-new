@@ -20,40 +20,40 @@ const ContactMe = () => {
         Contact
       </h3>
       <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+        <h4 className="md:text-4xl text-3xl font-semibold">
           I've got just what you need.{' '}
           <span className="decoration-[#F7AB0A]/50 underline">Let's Talk</span>
         </h4>
-        <div className="space-y-10">
-          <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">0528850658</p>
+        <div className="md:space-y-10 space-y-5">
+          <div className="contactMeInfoContainer">
+            <PhoneIcon className="contactMeInfoIcon" />
+            <p className="contactMeInfo">0528850658</p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">sagi1236@gmail.com</p>
+          <div className="contactMeInfoContainer">
+            <EnvelopeIcon className="contactMeInfoIcon" />
+            <p className="contactMeInfo">sagi1236@gmail.com</p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
-            <p className="text-2xl">Tel Aviv</p>
+          <div className="contactMeInfoContainer">
+            <MapPinIcon className="contactMeInfoIcon" />
+            <p className="contactMeInfo">Tel Aviv</p>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="flex flex-col space-y-2 w-full mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex sm:flex-row flex-col sm:space-y-0 space-y-2 sm:space-x-2">
             <input
               {...register('name')}
               placeholder="Name"
-              className="contactInput"
+              className="contactInput w-full"
               type="text"
             />
             <input
               {...register('email')}
               placeholder="Email"
-              className="contactInput"
+              className="contactInput w-full"
               type="email"
             />
           </div>
@@ -71,7 +71,7 @@ const ContactMe = () => {
           />
           <button
             type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-[#F7AB0A] sm:py-5 sm:px-10 py-2 px-5 rounded-md text-black font-bold text-lg"
           >
             Submit
           </button>
