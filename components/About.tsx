@@ -56,11 +56,13 @@ const About = ({ pageInfo }: Props) => {
           background
         </h4>
         <div className="flex flex-col md:gap-5">
-          {pageInfo?.backgroundInformation?.split('$').map(paragraph => (
-            <p className="md:text-base text-sm">
-              {paragraph.split('@').map(sentence => `${sentence}\n`)}
-            </p>
-          ))}
+          {pageInfo?.backgroundInformation
+            ?.split('$')
+            .map((paragraph, index) => (
+              <p key={index} className="md:text-base text-sm">
+                {paragraph.split('@').map(sentence => `${sentence}\n`)}
+              </p>
+            ))}
         </div>
       </div>
     </motion.div>
