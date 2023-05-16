@@ -26,6 +26,7 @@ const About = ({ pageInfo }: Props) => {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         About
       </h3>
+
       <MotionImage
         initial={{
           x: -200,
@@ -46,15 +47,21 @@ const About = ({ pageInfo }: Props) => {
         height={0}
         sizes="100vw"
         alt="My photo"
-        className="-mb-20 md:mb-0 flex-shrink-0 w-56 h-auto rounded-full object-cover md:rounded-lg md:w-64 xl:w-[500px]"
+        className="-mb-20 flex-shrink-0  md:mb-0 hidden sm:block sm:w-40 h-auto rounded-full object-cover md:rounded-lg md:w-64 xl:w-[500px]"
       />
       <div className="space-y-10 px-0 md:px-10">
-        <h4 className="text-4xl font-semibold">
+        <h4 className="text-3xl md:text-4xl font-semibold">
           Here is a{' '}
           <span className="underline decoration-[#F7AB0A]/50">little</span>{' '}
           background
         </h4>
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <div className="flex flex-col md:gap-5">
+          {pageInfo?.backgroundInformation?.split('$').map(paragraph => (
+            <p className="md:text-base text-sm">
+              {paragraph.split('@').map(sentence => `${sentence}\n`)}
+            </p>
+          ))}
+        </div>
       </div>
     </motion.div>
   );
