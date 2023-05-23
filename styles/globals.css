@@ -12,7 +12,7 @@
   }
 
   .projectButtons {
-    @apply bg-[#F7AB0A] py-2 px-8 rounded-md text-black font-bold text-lg;
+    @apply bg-[#F7AB0A] py-2 px-8 rounded-md text-black font-bold text-lg sm:w-auto w-[11rem];
   }
 
   .contactMeInfoContainer {
@@ -24,6 +24,41 @@
   }
 
   .contactMeInfo {
-    @apply md:text-2xl text-xl;
+    @apply md:text-2xl sm:text-xl text-lg;
   }
+}
+
+@layer utilities {
+  .min-safe-h-screen {
+    /* equivalent to 100dvh in major browsers */
+    min-height: calc(
+      100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
+    );
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    .min-safe-h-screen {
+      /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+      min-height: -webkit-fill-available;
+    }
+  }
+
+  /* .mobile-scroll {
+    ::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    ::-webkit-scrollbar:horizontal {
+      height: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    ::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+  } */
 }
