@@ -15,12 +15,12 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+    <div className="text-center min-safe-h-screen max-w-7xl px-10 mx-auto items-center ">
+      <h3 className="mt-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
       <div className="flex flex-col space-y-10">
-        <h4 className="md:text-4xl text-3xl font-semibold">
+        <h4 className="mt-10 md:text-4xl sm:text-3xl text-2xl font-semibold">
           I've got just what you need.{' '}
           <span className="decoration-[#F7AB0A]/50 underline">Let's Talk</span>
         </h4>

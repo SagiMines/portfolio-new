@@ -14,6 +14,7 @@ import { fetchSkills } from '@/utils/fetchSkills';
 import { fetchProjects } from '@/utils/fetchProjects';
 import { fetchSocials } from '@/utils/fetchSocials';
 import { urlFor } from '@/sanity';
+import Footer from '@/components/Footer';
 
 type Props = {
   pageInfo: PageInfo;
@@ -25,11 +26,15 @@ type Props = {
 export default function Home({ pageInfo, skills, projects, socials }: Props) {
   return (
     <div
-      className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll
+      className="flex flex-col bg-[rgb(36,36,36)] text-white h-[100dvh] snap-y snap-mandatory overflow-y-scroll
      overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80"
     >
       <Head>
         <title>Sagi Mines</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
       </Head>
 
       <Header socials={socials} />
@@ -38,7 +43,7 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
         <Hero pageInfo={pageInfo} />
       </section>
 
-      <section id="about" className="snap-center">
+      <section id="about" className="snap-start">
         <About pageInfo={pageInfo} />
       </section>
 
@@ -54,8 +59,10 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
         <ContactMe />
       </section>
 
-      <Link href="#hero">
-        <footer className="sticky bottom-5 w-full cursor-pointer">
+      <Footer />
+
+      {/* <Link href="#hero">
+        <footer className="absolute bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <Image
               className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
@@ -67,7 +74,7 @@ export default function Home({ pageInfo, skills, projects, socials }: Props) {
             />
           </div>
         </footer>
-      </Link>
+      </Link> */}
     </div>
   );
 }

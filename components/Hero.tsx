@@ -12,15 +12,15 @@ type Props = {
 const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      `Hi, The Name's ${pageInfo?.name}`,
-      'Love To Code',
+      `Hi, I'm ${pageInfo?.name}`,
       'Full Stack & Front End Developer',
+      'Love To Code',
     ],
     loop: true,
     delaySpeed: 2000,
   });
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="sm:mt-16 min-safe-h-screen space-y-8 text-center overflow-hidden">
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
@@ -30,11 +30,11 @@ const Hero = ({ pageInfo }: Props) => {
         height="300"
         alt="My logo icon"
       />
-      <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px] mx-3 leading-6">
+      <div className="relative z-20">
+        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px]">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-4xl lg:text-6xl font-semibold scroll-px-10 mx-3 leading-[3rem]">
+        <h1 className="text-3xl lg:text-6xl sm:text-5xl font-semibold scroll-px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
