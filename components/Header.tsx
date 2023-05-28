@@ -34,21 +34,6 @@ function Header({ socials }: Props) {
             bgColor="transparent"
           />
         ))}
-        {/* <SocialIcon
-          url="https://www.linkedin.com/in/sagimines/"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://github.com/SagiMines"
-          fgColor="gray"
-          bgColor="transparent"
-        />
-        <SocialIcon
-          url="https://www.facebook.com/SagiMines"
-          fgColor="gray"
-          bgColor="transparent"
-        /> */}
       </motion.div>
       <Link href="#contact" passHref legacyBehavior>
         <motion.div

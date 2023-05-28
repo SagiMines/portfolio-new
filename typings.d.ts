@@ -55,3 +55,9 @@ export interface Social extends SanityBody {
   title: string;
   url: string;
 }
+
+// export interface UIEvent<T = Element, E = NativeUIEvent>
+//   extends SyntheticEvent<T, E> {
+//   detail: number;
+//   view: AbstractView;
+// }

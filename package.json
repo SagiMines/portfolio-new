@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroicons/react": "^2.0.17",
+    "@emailjs/browser": "^3.11.0",
     "@portabletext/react": "^3.0.0",
     "@sanity/image-url": "^1.0.2",
     "@types/node": "20.1.0",
@@ -20,7 +20,8 @@
     "next-sanity": "^4.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.43.9",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.8.0",
     "react-modal": "^3.16.1",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^5.15.0",
