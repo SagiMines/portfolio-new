@@ -20,11 +20,19 @@
   }
 
   .contactMeInfoIcon {
-    @apply text-[#F7AB0A] h-7 w-7 animate-pulse;
+    @apply text-[#F7AB0A] h-5 w-5 sm:h-7 sm:w-7 animate-pulse;
   }
 
   .contactMeInfo {
-    @apply md:text-2xl sm:text-xl text-lg;
+    @apply md:text-2xl sm:text-xl text-lg cursor-pointer hover:underline hover:decoration-[#F7AB0A]/50;
+  }
+
+  .sectionsNavIcons {
+    @apply p-2.5 rounded-2xl;
+  }
+
+  .sectionsNavIconActive {
+    @apply rounded-3xl bg-white text-[rgba(128,128,128)];
   }
 }
 
@@ -36,29 +44,22 @@
     );
   }
 
+  @media screen and (max-width: 640px) {
+    .scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scrollbar {
+      overflow-y: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+
   @supports (-webkit-touch-callout: none) {
     .min-safe-h-screen {
       /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
       min-height: -webkit-fill-available;
     }
   }
-
-  /* .mobile-scroll {
-    ::-webkit-scrollbar {
-      -webkit-appearance: none;
-    }
-
-    ::-webkit-scrollbar:horizontal {
-      height: 12px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    ::-webkit-scrollbar-track {
-      border-radius: 10px;
-      background-color: #ffffff;
-    }
-  } */
 }

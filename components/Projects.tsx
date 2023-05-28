@@ -96,7 +96,7 @@ const Projects = ({ projects }: Props) => {
                 <p className="md:text-lg block sm:hidden text-sm text-center md:text-left">
                   {project?.summary.slice(0, 50)}...
                   <span
-                    className="underline"
+                    className="underline cursor-pointer"
                     onClick={() => openModal(project)}
                   >
                     Read More

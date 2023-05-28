@@ -20,7 +20,7 @@ const Hero = ({ pageInfo }: Props) => {
     delaySpeed: 2000,
   });
   return (
-    <div className="sm:mt-16 min-safe-h-screen space-y-8 text-center overflow-hidden">
+    <div className=" pb-[8rem] lg:pb-[11rem] min-safe-h-screen space-y-8 text-center overflow-hidden">
       <BackgroundCircles />
       <Image
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
@@ -38,7 +38,7 @@ const Hero = ({ pageInfo }: Props) => {
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
-        <div className="pt-5">
+        <div className="pt-5 ">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>
