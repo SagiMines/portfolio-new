@@ -1,21 +1,22 @@
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircles from './BackgroundCircles';
 import Image from 'next/image';
-import Link from 'next/link';
 import { PageInfo } from '@/typings';
 import { urlFor } from '@/sanity';
+import Link from 'next/link';
 
 type Props = {
   pageInfo: PageInfo;
 };
 
 const Hero = ({ pageInfo }: Props) => {
-  const [text, count] = useTypewriter({
+  const [text] = useTypewriter({
     words: [
       `Hi, I'm ${pageInfo?.name}`,
       'Full Stack & Front End Developer',
       'Love To Code',
     ],
+
     loop: true,
     delaySpeed: 2000,
   });
@@ -31,25 +32,19 @@ const Hero = ({ pageInfo }: Props) => {
         alt="My logo icon"
       />
       <div className="relative z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px]">
+        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[12px] leading-6">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-3xl lg:text-6xl sm:text-5xl font-semibold scroll-px-10">
+        <h1 className="text-really-small text-2xl lg:text-6xl sm:text-5xl font-semibold scroll-px-10">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#F7AB0A" />
         </h1>
         <div className="pt-5 ">
-          <Link href="#about">
-            <button className="heroButton">About</button>
-          </Link>
-          <Link href="#skills">
-            <button className="heroButton">Skills</button>
-          </Link>
+          <a href="assets/cv-sagimines.pdf" download>
+            <button className="heroButton">Download CV</button>
+          </a>
           <Link href="#projects">
-            <button className="heroButton">Projects</button>
-          </Link>
-          <Link href="#contact">
-            <button className="heroButton">Contact</button>
+            <button className="heroButton">My Projects</button>
           </Link>
         </div>
       </div>
