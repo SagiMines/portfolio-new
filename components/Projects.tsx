@@ -18,7 +18,6 @@ const Projects = ({ projects }: Props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const currentProject = useRef<Project>();
   const MotionImage = motion(Image);
-
   function openModal(project: Project) {
     currentProject.current = project;
     setIsOpen(true);
@@ -52,7 +51,7 @@ const Projects = ({ projects }: Props) => {
             >
               <MotionImage
                 initial={{
-                  y: -50,
+                  y: -90,
                   opacity: 0,
                 }}
                 whileInView={{
