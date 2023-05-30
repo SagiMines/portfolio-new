@@ -12,6 +12,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'index',
+      title: 'Index',
+      description: 'Index of the project',
+      type: 'number',
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -45,5 +51,12 @@ export default defineType({
       title: 'LinkToDemo',
       type: 'url',
     }),
+  ],
+  orderings: [
+    {
+      name: 'sortByIndex',
+      title: 'SortByIndex',
+      by: [{field: 'index', direction: 'desc'}],
+    },
   ],
 })
