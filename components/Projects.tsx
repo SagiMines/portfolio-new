@@ -117,7 +117,7 @@ const Projects = ({ projects }: Props) => {
                   {project && project.linkToClient && (
                     <Link href={project?.linkToClient}>
                       <button type="submit" className="projectButtons">
-                        {project.linkToServer ? 'Client' : 'App'} Code
+                        {project.linkToServer ? 'Client' : 'Source'} Code
                       </button>
                     </Link>
                   )}
