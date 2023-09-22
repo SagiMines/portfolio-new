@@ -2,13 +2,12 @@
 
 <div align='center'>
 <a href="https://sagimines.vercel.app/">
-<img src="https://sagimines.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwpmr4kdv%2Fproduction%2F75efc9ae25aecdee6310e4fe3d7eb790cc80f775-3500x1440.png&w=384&q=100" 
-width="250" height="auto" style="border-radius: 50%; "/>
+<img src="https://lh3.googleusercontent.com/pw/AIL4fc8Svb1lMXtfy1PLIy9SZngjCgTCsAl2Js6v8RO8IMBL8WjJOyXwjv3f_IalEhIhjjFuyYWgDoTJZnF902dAUKRVTaoJJsL2gARH4OwvwR8FTuG8Z62OAo8269z4I8CtY0xM-a4pVVTZXONeOWEMJ2FR=w156-h156-s-no?authuser=3" />
 </a>
 </div>
 Welcome to my portfolio, a showcase of my projects, skills, and a way to contact me. This portfolio project is built with React using Next.js and powered by the Sanity.io platform for data storage. API calls are made using the serverless features of Next.js.
 
-####**[Live Demo](https://sagimines.vercel.app/)**
+### **[Live Demo](https://sagimines.vercel.app/)**
 
 ## Table of Contents
 
