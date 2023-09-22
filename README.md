@@ -2,13 +2,13 @@
 
 <div align='center'>
 <a href="https://sagimines.vercel.app/">
-<img src="https://sagimines.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwpmr4kdv%2Fproduction%2F75efc9ae25aecdee6310e4fe3d7eb790cc80f775-3500x1440.png&w=384&q=100" style="border-radius: 50%; height: 100px; length: 100px;"/>
+<img src="https://sagimines.vercel.app/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fwpmr4kdv%2Fproduction%2F75efc9ae25aecdee6310e4fe3d7eb790cc80f775-3500x1440.png&w=384&q=100" 
+width="250" height="auto" style="border-radius: 50%; "/>
 </a>
 </div>
 Welcome to my portfolio, a showcase of my projects, skills, and a way to contact me. This portfolio project is built with React using Next.js and powered by the Sanity.io platform for data storage. API calls are made using the serverless features of Next.js.
-<a href="https://sagimines.vercel.app/">
-<p style="font-weight: bold; font-size: 1.5rem; margin-top: 1rem;">Live Demo</p>
-</a>
+
+####**[Live Demo](https://sagimines.vercel.app/)**
 
 ## Table of Contents
 
@@ -19,7 +19,6 @@ Welcome to my portfolio, a showcase of my projects, skills, and a way to contact
 - [Environment Variables](#environment-variables)
 - [Skills](#skills)
 - [Contact](#contact)
-- [License](#license)
 
 ## Overview
 
@@ -113,9 +112,3 @@ Feel free to get in touch with me:
 - **Email:** [sagi1236@gmail.com](mailto:sagi1236@gmail.com)
 - **Phone:** [+972 (52) 885-0658](tel:+972528850658)
 - **WhatsApp:** [+972 (52) 885-0658](https://wa.me/972528850658)
-
-## License
-
-This portfolio project is open source and available under the [MIT License](LICENSE). You are welcome to use it as a template for your own portfolio or customize it to suit your needs.
-
-Thank you for visiting my portfolio!
